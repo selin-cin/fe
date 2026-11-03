@@ -11,6 +11,8 @@ I designed and verified the complete fuzzy extractor datapath in this repository
 - the Ascon-XOF128 key-derivation core
 - the fuzzy_top integration: enrollment and reconstruction flows, PUF stream interface and helper-data storage interface
 
+The SRAM PUF wrapper, AES-GCM and SPI blocks were developed by other group members and are not part of this repository.
+
 ## How it works
 - Enrollment (once): read the PUF, compute public helper data and store it in non-volatile memory, derive the key.
 - Reconstruction (every boot): read the PUF again (now with bit errors), use the helper data to correct the errors, and derive the same key.
